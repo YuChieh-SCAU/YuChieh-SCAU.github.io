@@ -87,7 +87,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/23/%E4%BD%BF%E7%94%A8WSL%E5%AE%89%E8%A3%85Ubuntu%E7%9A%84%E7%B3%BB%E7%BB%9F%E8%B7%AF%E5%BE%84/">在安装模块的过程中遇到一些问题</a>
+      <a class="article-title" href="/2020/07/23/%E4%BD%BF%E7%94%A8WSL%E5%AE%89%E8%A3%85Ubuntu%E7%9A%84%E7%B3%BB%E7%BB%9F%E8%B7%AF%E5%BE%84/">使用WSL安装Ubuntu的系统路径</a>
     </h1>
   
 
@@ -96,8 +96,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>有时候希望能用Windows系统下的软件对Ubuntu子系统的文件进行处理，要找到这个子系统的路径</p>
-<p>###子系统的路径如下</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\用户\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc\LocalState\rootfr</span><br></pre></td></tr></table></figure>
+<h2 id="子系统的路径如下"><a href="#子系统的路径如下" class="headerlink" title="子系统的路径如下"></a>子系统的路径如下</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\用户\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc\LocalState\rootfr</span><br></pre></td></tr></table></figure>
 
 <p>来自超菜鸟的记录</p>
 
@@ -108,6 +107,49 @@
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%A7%A3%E5%86%B3/" rel="tag">解决</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" rel="tag">问题总结</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-一些小问题总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/23/%E4%B8%80%E4%BA%9B%E5%B0%8F%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" class="article-date">
+  <time datetime="2020-07-22T16:00:00.000Z" itemprop="datePublished">2020-07-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/23/%E4%B8%80%E4%BA%9B%E5%B0%8F%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/">一些小问题总结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="pandas的问题"><a href="#pandas的问题" class="headerlink" title="pandas的问题"></a>pandas的问题</h2><p>前提：通过WSL安装的Ubuntu子系统，新建了一个CSV格式文件，在Windows系统下对文件进行了编辑操作。</p>
+<p>问题：<br>在子系统下，使用pandas的时候，系统报错：提示文件没有要分析的数据。</p>
+<p>解决方法：<br>在Windows下的操作，在子系统中是不能显示的，之后在子系统下使用vscode对CSV文件进行编辑，再测试，没有问题。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import pandas as pd</span><br><span class="line"></span><br><span class="line"><span class="comment">#pandas读取CSV格式数据</span></span><br><span class="line">df = pd.read_csv(<span class="string">'./dog.csv'</span>, engine=<span class="string">"python"</span>)</span><br><span class="line">    </span><br><span class="line"><span class="built_in">print</span>(df)</span><br><span class="line"></span><br><span class="line">     number  class</span><br><span class="line">0      1    english</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/07/23/%E4%B8%80%E4%BA%9B%E5%B0%8F%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" data-id="ckcypte960000a5be8nlad8wu" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pandas/" rel="tag">pandas</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" rel="tag">问题总结</a></li></ul>
 
     </footer>
   </div>
@@ -238,7 +280,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A7%A3%E5%86%B3/" rel="tag">解决</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" rel="tag">问题总结</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/pandas/" rel="tag">pandas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A7%A3%E5%86%B3/" rel="tag">解决</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" rel="tag">问题总结</a></li></ul>
     </div>
   </div>
 
@@ -248,7 +290,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/%E8%A7%A3%E5%86%B3/" style="font-size: 10px;">解决</a> <a href="/tags/%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" style="font-size: 10px;">问题总结</a>
+      <a href="/tags/pandas/" style="font-size: 10px;">pandas</a> <a href="/tags/%E8%A7%A3%E5%86%B3/" style="font-size: 15px;">解决</a> <a href="/tags/%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" style="font-size: 20px;">问题总结</a>
     </div>
   </div>
 
@@ -270,7 +312,11 @@
       <ul>
         
           <li>
-            <a href="/2020/07/23/%E4%BD%BF%E7%94%A8WSL%E5%AE%89%E8%A3%85Ubuntu%E7%9A%84%E7%B3%BB%E7%BB%9F%E8%B7%AF%E5%BE%84/">在安装模块的过程中遇到一些问题</a>
+            <a href="/2020/07/23/%E4%BD%BF%E7%94%A8WSL%E5%AE%89%E8%A3%85Ubuntu%E7%9A%84%E7%B3%BB%E7%BB%9F%E8%B7%AF%E5%BE%84/">使用WSL安装Ubuntu的系统路径</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/23/%E4%B8%80%E4%BA%9B%E5%B0%8F%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/">一些小问题总结</a>
           </li>
         
           <li>
